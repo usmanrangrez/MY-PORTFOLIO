@@ -94,7 +94,7 @@
 footer {
     /* height: 500px; */
     margin-top: 80px;
-    background-color: var(--clr-slate600);
+    background-color: var(--clr-slate400);
     color: var(--clr-slate400);
     text-align: center;
     padding: 1px;
@@ -154,7 +154,7 @@ footer {
 footer {
     /* height: 500px; */
     margin-top: 60px;
-    background-color: var(--clr-dark);
+    background-color: var(--clr-slate400);
     color: var(--clr-slate400);
     text-align: center;
     padding: 1px;
