@@ -47,7 +47,7 @@ html {
 
 body {
     font-family: 'General Sans', sans-serif;
-    background-color: var(--clr-dark);
+    background-color: var(--clr-light);
     color: var(--clr-light);
 }
 
