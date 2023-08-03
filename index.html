@@ -1,291 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/utils.css" />
+    <link rel="stylesheet" href="./styles/modern-normalize.css" />
+    <link rel="stylesheet" href="./styles/components/about.css" />
+    <link rel="stylesheet" href="./styles/components/cards.css" />
+    <link rel="stylesheet" href="./styles/components/header.css" />
+    <link rel="stylesheet" href="./styles/components/hero.css" />
+    <link rel="stylesheet" href="./styles/components/mobile-nav.css" />
+    <link rel="stylesheet" href="./styles/components/work.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/utils.css">
-  <link rel="stylesheet" href="./styles/modern-normalize.css">
-  <link rel="stylesheet" href="./styles/components/about.css">
-  <link rel="stylesheet" href="./styles/components/cards.css">
-  <link rel="stylesheet" href="./styles/components/header.css">
-  <link rel="stylesheet" href="./styles/components/hero.css">
-  <link rel="stylesheet" href="./styles/components/mobile-nav.css">
-  <link rel="stylesheet" href="./styles/components/work.css"> -->
+    <title>Dev Server</title>
+  </head>
 
-  <title>Dev Server</title>
-</head>
-
-<body>
-  <header class="header container">
-    <nav>
-      <ul class="header__menu">
-        <li>
-          <a class="header__link" href="#about">About</a>
-        </li>
-        <li>
-          <a class="header__link" href="#featured">Work</a>
-        </li>
-        <li>
-          <a class="header__link" href="#contact">Contact</a>
-        </li>
-        <li class="header__line"></li>
-        <li>
-          <button id="theme-toggle" class="header__sun">
-            <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-            </svg>
-
-          </button>
-        </li>
-        <li>
-          <a class="header__resume btn"
-            href="https://drive.google.com/file/d/1puowaf4I47tDklvXwfah-DlBRCqEMCdW/view?usp=sharing"
-            target="_blank">Resume</a>
-        </li>
-      </ul>
-      <button class="header__bars">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path fill-rule="evenodd"
-            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-            clip-rule="evenodd" />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <!-- Mobile navigation -->
-  <div class="mobile-nav">
-    <nav>
-      <ul class="mobile-nav__menu">
-        <li>
-          <a class="mobile-nav__link" href="#about">About</a>
-        </li>
-        <li>
-          <a class="mobile-nav__link" href="#featured">Work</a>
-        </li>
-        <li>
-          <a class="mobile-nav__link" href="#contact">Contact</a>
-        </li>
-        <li class="mobile-nav__link-line"></li>
-        <li>
-          <button id="theme-toggle" class="mobile-nav__sun">
-            <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-            </svg>
-          </button>
-        </li>
-        <li>
-          <a href="https://drive.google.com/file/d/1puowaf4I47tDklvXwfah-DlBRCqEMCdW/view?usp=sharing"
-            class="mobile-nav__btn btn">Resume</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <!-- end of mobile nav -->
-  <main>
-    <section class="hero container">
-      <img class="hero__img" src="./public/about1.jpg" alt="profile_picture">
-      <h2 class="hero__subtitle">Hi, I'm Usman 👋</h2>
-      <h1 class="hero__title">FRONT-END <br>
-        WEB DEVELOPER.</h1>
-      <p class="hero__description">A passionate <strong> Frontend</strong> web developer.
-        I am both self-driven and self-motivated, and I am constantly experimenting with new technologies and
-        techniques.
-        I stand on a sweet spot where design meets code.</p>
-      <a class="hero__btn btn" href="https://www.linkedin.com/in/usman-rangrez-125a07ab/" target="_blank">Reach Out</a>
-    </section>
-    <section id="about" class="about container section">
-      <div class="about__content">
-        <h2 class="about__title">About</h2>
-        <p class="about__description">Hello there! I'm <strong>Usman</strong> I am a Web Developer.</p>
-        <p class="about__description">I am pursuing B.Tech in Computer Science & Engineering from SRM IST, and my
-          primary focus and inspiration for
-          my studies is Full Stack Web Development.</p>
-        <p class="about__description">In my free time, I play football and online video games. I am both self-driven and
-          self-motivated, and I am
-          constantly experimenting with new technologies and techniques. I stand on a sweet spot where design meets
-          code.You can check some of my works <a style="text-decoration: none;" href="https://github.com/usmanrangrez"
-            target="_blank">here.</a>
+  <body>
+    <header class="header container">
+      <nav>
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="header__link" href="#featured">Work</a>
+          </li>
+          <li>
+            <a class="header__link" href="#contact">Contact</a>
+          </li>
+          <li class="header__line"></li>
+          <li>
+            <button id="theme-toggle" class="header__sun">
+              <svg
+                xmlns=" http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a
+              class="header__resume btn"
+              href="https://drive.google.com/file/d/1puowaf4I47tDklvXwfah-DlBRCqEMCdW/view?usp=sharing"
+              target="_blank"
+              >Resume</a
+            >
+          </li>
+        </ul>
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <!-- Mobile navigation -->
+    <div class="mobile-nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li>
+            <a class="mobile-nav__link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#featured">Work</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#contact">Contact</a>
+          </li>
+          <li class="mobile-nav__link-line"></li>
+          <li>
+            <button id="theme-toggle" class="mobile-nav__sun">
+              <svg
+                xmlns=" http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a
+              href="https://drive.google.com/file/d/1puowaf4I47tDklvXwfah-DlBRCqEMCdW/view?usp=sharing"
+              class="mobile-nav__btn btn"
+              >Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- end of mobile nav -->
+    <main>
+      <section class="hero container">
+        <img
+          class="hero__img"
+          src="./public/about1.jpg"
+          alt="profile_picture"
+        />
+        <h2 class="hero__subtitle">Hi, I'm Usman 👋</h2>
+        <h1 class="hero__title">
+          FRONT-END <br />
+          WEB DEVELOPER.
+        </h1>
+        <p class="hero__description">
+          A passionate <strong> Frontend</strong> web developer. I am both
+          self-driven and self-motivated, and I am constantly experimenting with
+          new technologies and techniques. I stand on a sweet spot where design
+          meets code.
         </p>
-        <hr class="about__hr">
-        <h3 class="about__subtitle">Technologies</h3>
-        <div class="about__ul_container">
-          <ul class="about__ul">
-            <li class="about__list">JavaScript (ES6+)</li>
-            <li class="about__list">CSS</li>
-            <li class="about__list">HTML</li>
-          </ul>
-          <ul class="about__ul">
-            <li class="about__list">ReactJS</li>
-            <li class="about__list">TailwindCSS</li>
-            <li class="about__list">JQuery</li>
-          </ul>
-        </div>
-      </div>
-      <div class="about__img-wrapper">
-        <img class="about__img" src="./public/about3.jpg" alt="Profile picture">
-      </div>
-    </section>
-    <section id="featured" class="featured container section">
-      <h3 class="featured__subtitle">Work Experience</h3>
-      <div class="container">
-        <div class="card">
-          <img src="./public/4edgee.png" alt=" card image">
-          <div class="card-content">
-            <h3>4Edge IT Solutions</h3>
-            <p>Software Engineer - (Intern)</p>
-            <p>Nov2022-Dec2022</p>
-            <a href="https://4edgeit.com/" target="_blank">Learn More</a>
+        <a
+          class="hero__btn btn"
+          href="https://www.linkedin.com/in/usman-rangrez-125a07ab/"
+          target="_blank"
+          >Reach Out</a
+        >
+      </section>
+      <section id="about" class="about container section">
+        <div class="about__content">
+          <h2 class="about__title">About</h2>
+          <p class="about__description">
+            Hello there! I'm <strong>Usman</strong> I am a Web Developer.
+          </p>
+          <p class="about__description">
+            I am pursuing B.Tech in Computer Science & Engineering from SRM IST,
+            and my primary focus and inspiration for my studies is Full Stack
+            Web Development.
+          </p>
+          <p class="about__description">
+            In my free time, I play football and online video games. I am both
+            self-driven and self-motivated, and I am constantly experimenting
+            with new technologies and techniques. I stand on a sweet spot where
+            design meets code.You can check some of my works
+            <a
+              style="text-decoration: none"
+              href="https://github.com/usmanrangrez"
+              target="_blank"
+              >here.</a
+            >
+          </p>
+          <hr class="about__hr" />
+          <h3 class="about__subtitle">Technologies</h3>
+          <div class="about__ul_container">
+            <ul class="about__ul">
+              <li class="about__list">JavaScript (ES6+)</li>
+              <li class="about__list">CSS</li>
+              <li class="about__list">HTML</li>
+            </ul>
+            <ul class="about__ul">
+              <li class="about__list">ReactJS</li>
+              <li class="about__list">TailwindCSS</li>
+              <li class="about__list">JQuery</li>
+            </ul>
           </div>
         </div>
-        <div class="card">
-          <img src="./public/letsgrowmore.jpg" alt="card image">
-          <div class="card-content">
-            <h3>Lets Grow More</h3>
-            <p>Web Developer (Intern)</p>
-            <p>July2022-Sep2022</p>
-            <a href="https://letsgrowmore.in" target="_blank">Learn More</a>
+        <div class="about__img-wrapper">
+          <img
+            class="about__img"
+            src="./public/about3.jpg"
+            alt="Profile picture"
+          />
+        </div>
+      </section>
+      <section id="featured" class="featured container section">
+        <h3 class="featured__subtitle">Work Experience</h3>
+        <div class="container">
+          <div class="card">
+            <img src="./public/4edgee.png" alt=" card image" />
+            <div class="card-content">
+              <h3>4Edge IT Solutions</h3>
+              <p>Software Engineer - (Intern)</p>
+              <p>Nov2022-Dec2022</p>
+              <a href="https://4edgeit.com/" target="_blank">Learn More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./public/letsgrowmore.jpg" alt="card image" />
+            <div class="card-content">
+              <h3>Lets Grow More</h3>
+              <p>Web Developer (Intern)</p>
+              <p>July2022-Sep2022</p>
+              <a href="https://letsgrowmore.in" target="_blank">Learn More</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="work container1 section proj">
-      <h2 class="work__title">Projects</h2>
-      <p class="work__description">You can check out some of work here! I have been working on some of projects lately
-        and i am glad to have to build a strong background in development. I am currently working on ReactJS and i hope
-        to add more projects to my tiny <a style="text-decoration: none;" href="https://github.com/usmanrangrez"
-          target="_blank">set!</a></p>
+      <section class="work container1 section proj">
+        <h2 class="work__title">Projects</h2>
+        <p class="work__description">
+          You can check out some of work here! I have been working on some of
+          projects lately and i am glad to have to build a strong background in
+          development. I am currently working on ReactJS and i hope to add more
+          projects to my tiny
+          <a
+            style="text-decoration: none"
+            href="https://github.com/usmanrangrez"
+            target="_blank"
+            >set!</a
+            >
+          </p>
+          
+          <div class="work__container">
+            <!-- Project--1 -->
+            <div class="work__project">
+              <h3 class="work__project-subtitle">BitFortune</h3>
+              <h3 class="work__project-title">Bitcoin App</h3>
+              <div class="work__img-wrapper">
+                <img class="w_img" src="./public/bit.png" alt="Bitcoin App" />
+              </div>
+              <p class="work__project-description1">
+                The Bitcoin App provides comprehensive coin details and exchange
+                information.
+              </p>
+              <p class="work__project-description2">
+                Explore the latest trends and charts for each coin, empowering you
+                to make informed decisions.
+              </p>
+              <a
+                class="btn work__project-btn"
+                href="https://bit.ly/bit_fortune"
+                target="_blank"
+                >Website</a
+              >
+            </div>
 
-      <div class="work__container">
-        <!-- Project--1 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Bank-of-Habiibi</h3>
+
+          <!-- Project--2 -->
+          <div class="work__project">
+            <h3 class="work__project-subtitle">E-commerce</h3>
+            <div class="work__img-wrapper">
+              <img class="w_img" src="./public/commerce.png" alt="E-commerce App" />
+            </div>
+            <p class="work__project-description1">Hi, I'm Usman 👋.</p>
+            <p class="work__project-description2">
+              Explore my e-commerce app, built using React Router.
+            </p>
+            <a
+              class="btn work__project-btn"
+              href="https://bit.ly/ecommerce-x"
+              target="_blank"
+              >Website</a
+            >
+          </div>
+         
+          <!-- Project--3 -->
+          <div class="work__project">
+            <h3 class="work__project-subtitle">Git Xplorer</h3>
+            <h3 class="work__project-title">GitHub Profile Tracker</h3>
+            <div class="work__img-wrapper">
+              <img
+                class="w_img"
+                src="./public/github.png"
+                alt="GitHub Profile Tracker"
+              />
+            </div>
+            <p class="work__project-description1">
+              Stay connected with your GitHub homies.
+            </p>
+            <p class="work__project-description2">
+              Enter a username to retrieve user details, repositories, forks,
+              and more. Keep track of your search history.
+            </p>
+            <a
+              class="btn work__project-btn"
+              href="https://bit.ly/githubxx-data"
+              target="_blank"
+              >Website</a
+            >
+          </div>
+          
+
+          <!-- Project--4 -->
+          <div class="work__project">
+            <h3 class="work__project-subtitle">Bank-of-Habiibi</h3>
           <h3 class="work__project-title">Bank-of-Habiibi</h3>
           <div class="work__img-wrapper work__image1">
-
-            <img class="w_img" src="./public/bank.png" alt="Bank-of-Habiibi">
+            <img
+              class="w_img"
+              src="./public/bank.png"
+              alt="Bank-of-Habiibi"
+            />
           </div>
-          <p class="work__project-description1">A custom Banking Application created for my friends where we can keep
-            track
-            of our daily transactions.</p>
-          <p class="work__project-description2">(For demo please use user1: <b>ur</b> and pin <b>1111</b> and user 2 as
-            <b>ut</b> and
-            pin <b>2222</b> )
+          <p class="work__project-description1">
+            A custom Banking Application created for my friends where we can
+            keep track of our daily transactions.
           </p>
-          <a class="btn work__project-btn" href="https://bit.ly/habibi-bank" target="_blank">Website</a>
+          <p class="work__project-description2">
+            (For demo please use user1: <b>ur</b> and pin <b>1111</b> and user
+            2 as <b>ut</b> and pin <b>2222</b> )
+          </p>
+          <a
+            class="btn work__project-btn"
+            href="https://bit.ly/habibi-bank"
+            target="_blank"
+            >Website</a
+          >
         </div>
-
-        <!-- Project--2 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Roll-Your-Dice</h3>
-          <h3 class="work__project-title">Roll-Your-Dice</h3>
-          <div class="work__img-wrapper">
-
-            <img class="w_img" src="./public/dice.png" alt="Roll-Your-Dice">
+          <!-- Project--5 -->
+          <div class="work__project">
+            <h3 class="work__project-subtitle">Go-Weather</h3>
+            <h3 class="work__project-title">Go-Weather</h3>
+            <div class="work__img-wrapper">
+              <img class="w_img" src="./public/weather.png" alt="Weather" />
+            </div>
+            <p class="work__project-description1">
+              Weatherex's vision is to make finding out the current weather.
+            </p>
+            <p class="work__project-description2">
+              You have to guess the location present in Background which is
+              somewhere in your city!
+            </p>
+            <a
+              class="btn work__project-btn"
+              href="https://bit-ly-go-weather.netlify.app/"
+              target="_blank"
+              >Website</a
+            >
           </div>
-          <p class="work__project-description1">Hey!Let's play a cool game. Roll you dice and get your score 100 points
-            to
-            win.
-          </p>
-          <p class="work__project-description2">If you get a 1 or 6(thrice) your score is reset!
-            Best of Luck!
-          </p>
-          <a class="btn work__project-btn" href="https://bit.ly/roll-your-dice" target="_blank">Website</a>
-        </div>
 
-        <!-- Project--3 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Go-Weather</h3>
-          <h3 class="work__project-title">Go-Weather</h3>
-          <div class="work__img-wrapper">
-
-            <img class="w_img" src="./public/weather.png" alt="Weather">
+          <!-- Project--6 -->
+          <div class="work__project">
+            <h3 class="work__project-subtitle">Roll-Your-Dice</h3>
+            <h3 class="work__project-title">Roll-Your-Dice</h3>
+            <div class="work__img-wrapper">
+              <img class="w_img" src="./public/dice.png" alt="Roll-Your-Dice" />
+            </div>
+            <p class="work__project-description1">
+              Hey!Let's play a cool game. Roll you dice and get your score 100
+              points to win.
+            </p>
+            <p class="work__project-description2">
+              If you get a 1 or 6(thrice) your score is reset! Best of Luck!
+            </p>
+            <a
+              class="btn work__project-btn"
+              href="https://bit.ly/roll-your-dice"
+              target="_blank"
+              >Website</a
+            >
           </div>
-          <p class="work__project-description1">Weatherex's vision is to make finding out the current weather.
-          </p>
-          <p class="work__project-description2">You have to guess the location present in Background which is somewhere
-            in
-            your city!
-          </p>
-          <a class="btn work__project-btn" href="https://bit-ly-go-weather.netlify.app/" target="_blank">Website</a>
-        </div>
 
-        <!-- Project--4 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Item-Lister</h3>
-          <h3 class="work__project-title">Item-Lister</h3>
-          <div class="work__img-wrapper">
+          
+      </section>
 
-            <img class="w_img" src="./public/lister.png" alt="item-Lister">
+      <!-- <section class="contact container section"> -->
+      <footer id="contact" style="background-color: rgb(167, 199, 176)">
+        <h2>Contact me</h2>
+        <div class="ff">
+          <div class="git-new">
+            <a
+              href="https://www.linkedin.com/in/usman-rangrez-125a07ab/"
+              target="_blank"
+              ><img src="/public/icons8-linkedin-circled.svg" alt="GH"
+            /></a>
           </div>
-          <p class="work__project-description1">Item-Lister is a Web App which acts as your Todo-Lister.
-          </p>
-          <p class="work__project-description2">Set your goalsfor the day and remove them once completed.
-          </p>
-          <a class="btn work__project-btn" href="https:item-lister-1212.netlify.app" target="_blank">Website</a>
-        </div>
-
-        <!-- Project--5 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Homie-Cards</h3>
-          <h3 class="work__project-title">Homie-Cards</h3>
-          <div class="work__img-wrapper">
-
-            <img class="w_img" src="./public/cards.png" alt="Weather">
+          <div>
+            <a href="https://github.com/usmanrangrez" target="_blank"
+              ><img src="/public/icons8-github.svg" alt="LI"
+            /></a>
           </div>
-          <p class="work__project-description1">Responsiveness is the goat.
-          </p>
-          <p class="work__project-description2">I made some cool responsive cards of my homies.
-          </p>
-          <a class="btn work__project-btn" href="https://coruscating-snickerdoodle-8f8c20.netlify.app/"
-            target="_blank">Website</a>
-        </div>
-
-        <!-- Project--6 -->
-        <div class="work__project">
-          <h3 class="work__project-subtitle">Old Portfolio</h3>
-          <h3 class="work__project-title">Old Portfolio</h3>
-          <div class="work__img-wrapper">
-
-            <img class="w_img" src="./public/old-p.png" alt="Weather">
+          <div>
+            <a href="https://twitter.com/usmaanrangrez" target="_blank"
+              ><img src="/public/icons8-twitter (1).svg" alt="TW"
+            /></a>
           </div>
-          <p class="work__project-description1">Hi i'm Usman 👋.
-          </p>
-          <p class="work__project-description2">You can check out my old work here.
-          </p>
-          <a class="btn work__project-btn" href="https://guileless-faun-137d29.netlify.app/" target="_blank">Website</a>
         </div>
-      </div>
-    </section>
+        <p class="last" style="color: black">
+          “If you're already a front-end developer, well, pretend you're also
+          wearing a pirate hat.”
+        </p>
+      </footer>
+      <!-- </section> -->
+    </main>
 
-
-    <!-- <section class="contact container section"> -->
-    <footer id="contact">
-      <h2>Contact me</h2>
-      <div class="ff">
-        <div class="git-new"><a href="https://www.linkedin.com/in/usman-rangrez-125a07ab/" target="_blank"><img
-              src="/public/icons8-linkedin-circled.svg" alt="GH"></a></div>
-        <div><a href="https://github.com/usmanrangrez" target="_blank"><img src="/public/icons8-github.svg"
-              alt="LI"></a></div>
-        <div><a href="https://twitter.com/usmaanrangrez" target="_blank"><img src="/public/icons8-twitter (1).svg"
-              alt="TW"></a></div>
-      </div>
-      <p class="last">“If you're already a front-end developer, well, pretend you're also wearing a pirate hat.”</p>
-    </footer>
-    <!-- </section> -->
-    <section class="footer container section">
-      <h3 class="footer__title" style="color: var(--clr-slate400);">~Usman Rangrez~</h3>
-    </section>
-  </main>
-
-  <script type="module" src="./src/main.js"></script>
-
-</body>
-
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
